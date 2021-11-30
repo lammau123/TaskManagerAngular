@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="header">
+        <h1>Task Manager</h1>
+        <button class="btn" (click)="addTask()">Add</button>
+    </div>
+    <div>
+        <app-task *ngFor="let task of tasks" [task]="task" (deleteEvent)="deleteTask($event)"></app-task>
+    </div>
+</div>

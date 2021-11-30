@@ -1,0 +1,27 @@
+.container {
+    box-sizing: content-box; 
+    min-width: 400px;
+    min-height: 200px;
+    border: 1px solid;
+    padding: 20px;
+    box-shadow: 2px 2px #888888;
+    border-radius: 0.2cm;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 20px;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 0.3em;
+    padding: 5px 10px;
+    background-color: green;
+}
+
+h1 {
+    margin-bottom:5px; margin-top:0px;
+}

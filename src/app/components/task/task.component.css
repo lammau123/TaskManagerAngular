@@ -1,0 +1,28 @@
+.task {
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 1px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#close { 
+    padding:0;
+    cursor: pointer; 
+    margin: 0;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-bottom:0px; margin-top:0px;
+}
+
+.appointment {
+    margin-bottom: 0px;
+}
