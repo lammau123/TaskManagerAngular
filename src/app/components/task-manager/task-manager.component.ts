@@ -9,6 +9,7 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class TaskManagerComponent implements OnInit {
   tasks: Task[];
+  isShowAddTask: boolean = false;
   constructor(private taskService: TasksService) { }
 
   ngOnInit(): void {
@@ -16,7 +17,7 @@ export class TaskManagerComponent implements OnInit {
   }
 
   addTask(){
-    console.log('to be implemented');
+    this.isShowAddTask = true;
   }
 
   deleteTask(id: string){
