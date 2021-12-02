@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">    
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" #formDir="ngForm">    
     <div class="form-container">
         <div class="form-row">
             <label class="form-label" for="scheduleName">Schedule</label>
@@ -6,11 +6,27 @@
                     id="scheduleName" 
                     name="scheduleName" 
                     placeholder="Schechule name"
-                    formControlName="scheduleName"/>
+                    formControlName="scheduleName"
+                    required/>
+        </div>
+        <div *ngIf="scheduleName.invalid && (scheduleName.dirty || scheduleName.touched)"
+              class="alert alert-danger">
+            <div *ngIf="scheduleName?.errors['required']">
+              Schedule name is required.
+            </div>
+            <div *ngIf="scheduleName?.errors['minlength']">
+              Schedule name must be at least 4 characters long.
+            </div>
         </div>
         <div class="form-row">
             <label class="form-label" for="time">Time</label>
             <input type="date" id="time" name="time" formControlName="time"/>
+        </div>
+        <div *ngIf="time.invalid && (time.dirty || time.touched)"
+              class="alert alert-danger">
+            <div *ngIf="time?.errors['required']">
+              Schedule Time is required.
+            </div>
         </div>
         <div class="form-submit">
             <button class="btn">Submit</button>
