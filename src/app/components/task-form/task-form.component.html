@@ -10,7 +10,7 @@
                     required/>
         </div>
         <div *ngIf="scheduleName.invalid && (scheduleName.dirty || scheduleName.touched)"
-              class="alert alert-danger">
+              class="alert">
             <div *ngIf="scheduleName?.errors['required']">
               Schedule name is required.
             </div>

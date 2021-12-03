@@ -32,3 +32,11 @@ input[type="text"]{
     padding: 0px 0px; 
     line-height: 28px; 
 }
+
+.alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
