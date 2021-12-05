@@ -23,4 +23,8 @@ export class TaskManagerComponent implements OnInit {
   deleteTask(id: string){
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
+
+  insertTask(task: Task){
+    this.tasks.push(task);
+  }
 }

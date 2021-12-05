@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Task } from '../../models/task';
 
 @Component({
   selector: 'app-task-form',
@@ -8,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class TaskFormComponent implements OnInit {
   formGroup!: FormGroup;
+  @Output() taskEvent = new EventEmitter<Task>();
 
   constructor() { }
 
@@ -21,7 +23,8 @@ export class TaskFormComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.formGroup.controls['scheduleName'].errors?.['required']);
+    this.taskEvent.emit({name: this.scheduleName.value, schedule: new Date(this.time.value)});
+    this.clear();
   }
 
   get scheduleName() {
@@ -30,5 +33,10 @@ export class TaskFormComponent implements OnInit {
 
   get time() {
     return this.formGroup.get('time');
+  }
+
+  clear(){
+    this.formGroup.get('scheduleName').reset();
+    this.formGroup.get('time').reset();
   }
 }

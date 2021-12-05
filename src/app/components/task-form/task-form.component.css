@@ -34,9 +34,12 @@ input[type="text"]{
 }
 
 .alert div {
-    background-color: #fed3d3;
-    color: #820000;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    color:red;
+    padding: 0px;
+    margin-bottom: 0px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
 }
 
