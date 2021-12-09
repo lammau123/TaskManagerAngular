@@ -1,0 +1,71 @@
+.page-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lt {
+    margin: 15px;
+}
+
+.gt {
+    margin: 15px;
+}
+
+.current-page {
+    margin: 15px;
+}
+
+.page-per-item {
+    display: flex;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.page-item {
+    display: flex;
+    justify-content:space-between; 
+    width: 50px;
+    border-bottom: 2px solid;
+}
+
+.page-item-label {
+    padding-right: 5px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+  
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+  
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.drop-arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    height: 3px;
+    width: 3px;
+    padding: 0px;
+    margin-bottom: 2px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.item-no {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
