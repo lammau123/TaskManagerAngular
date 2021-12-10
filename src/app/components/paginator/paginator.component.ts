@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class PaginatorComponent implements OnInit {
   showOptions = false;
   @Input() currentPage: number;
+  @Input() pageSize: number;
+  @Input() numberOfPages: number[];
   @Output() currentPageEvent = new EventEmitter();
 
   constructor() { }
@@ -19,8 +21,12 @@ export class PaginatorComponent implements OnInit {
     this.showOptions = !this.showOptions;
   }
 
-  getCurrentPage(){
-    return this.currentPage*10;
+  get currentTasks(){
+    return this.currentPage*this.pageSize;
+  }
+
+  get totalPages(){
+    return this.numberOfPages.length;
   }
 
   currentPageSelected(no: number){

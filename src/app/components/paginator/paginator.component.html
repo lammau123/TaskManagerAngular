@@ -2,18 +2,18 @@
     <div class="page-per-item" (click)="setShowItem()">
         <div class="page-item-label">Page Per Item:</div>
         <div class="page-item">
-            <div class="item-no">{{getCurrentPage()}}</div>
+            <div class="item-no">{{currentTasks}}</div>
             <div><i class="drop-arrow down"></i></div>
             <div [ngClass]="showOptions ? 'item-fadeIn' : 'item-fadeOut'" class="items">
                 <ul>
-                    <li (click)="currentPageSelected(1)">10</li>
-                    <li (click)="currentPageSelected(2)">20</li>
-                    <li (click)="currentPageSelected(3)">30</li>
-                    <li (click)="currentPageSelected(4)">40</li>
+                    <li *ngFor="let items of numberOfPages; index as i" 
+                        (click)="currentPageSelected(i+1)">
+                        {{items}}
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="current-page">Page 1 of 4</div>
+    <div class="current-page">Page {{currentPage}} of {{totalPages}}</div>
     <div class="lt"><i class="arrow left"></i></div><div class="gt"><i class="arrow right"></i></div>
 </div>
