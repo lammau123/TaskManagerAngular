@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginatorComponent implements OnInit {
   showOptions = false;
-  _currentPage = 1;
+  @Input() currentPage: number;
+  @Output() currentPageEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,11 +19,11 @@ export class PaginatorComponent implements OnInit {
     this.showOptions = !this.showOptions;
   }
 
-  setCurrentPage(page){
-    this._currentPage = page;
+  getCurrentPage(){
+    return this.currentPage*10;
   }
 
-  get currentPage(){
-    return this._currentPage*10;
+  currentPageSelected(no: number){
+    this.currentPageEvent.emit(no);
   }
 }

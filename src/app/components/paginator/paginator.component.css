@@ -46,6 +46,17 @@
     margin: 0;
     padding: 0;
 }
+
+.item-fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.item-fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
  
 ul {
     list-style-type: none;

@@ -10,6 +10,8 @@ import { TasksService } from '../../services/tasks.service';
 export class TaskManagerComponent implements OnInit {
   tasks: Task[];
   isShowAddTask: boolean = false;
+  currentPage: number = 1;
+  
   constructor(private taskService: TasksService) { }
 
   ngOnInit(): void {
@@ -26,5 +28,9 @@ export class TaskManagerComponent implements OnInit {
 
   insertTask(task: Task){
     this.tasks.push(task);
+  }
+
+  currentPageChanged(no: number){
+    this.currentPage = no;
   }
 }

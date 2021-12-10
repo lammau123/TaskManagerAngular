@@ -6,6 +6,6 @@
     <app-task-form *ngIf="isShowAddTask" (taskEvent)="insertTask($event)"></app-task-form>
     <div>
         <app-task *ngFor="let task of tasks" [task]="task" (deleteEvent)="deleteTask($event)"></app-task>
-        <app-paginator></app-paginator>
+        <app-paginator [currentPage]="currentPage" (currentPageEvent)="currentPageChanged($event)"></app-paginator>
     </div>
 </div>
