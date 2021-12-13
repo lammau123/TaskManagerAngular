@@ -30,6 +30,8 @@ export class PaginatorComponent implements OnInit {
   }
 
   currentPageSelected(no: number){
-    this.currentPageEvent.emit(no);
+    if(no > 0 && no <= this.numberOfPages.length) {
+      this.currentPageEvent.emit(no);
+    }
   }
 }

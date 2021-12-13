@@ -13,4 +13,8 @@ describe('TasksService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should be failed', () => {
+    expect(1).toBe(2);
+  });
 });

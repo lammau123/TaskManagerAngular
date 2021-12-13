@@ -8,8 +8,8 @@
         <app-task *ngFor="let task of tasks" [task]="task" (deleteEvent)="deleteTask($event)"></app-task>
         <app-paginator 
             [currentPage]="currentPage" 
-            [pageSize]="10"
-            [numberOfPages]="[10, 20, 30, 40]"
+            [pageSize]="pageSize"
+            [numberOfPages]="numberOfPages"
             (currentPageEvent)="currentPageChanged($event)"></app-paginator>
     </div>
 </div>

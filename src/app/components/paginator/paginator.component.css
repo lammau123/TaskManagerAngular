@@ -5,10 +5,12 @@
 
 .lt {
     margin: 15px;
+    cursor: pointer;
 }
 
 .gt {
     margin: 15px;
+    cursor: pointer;
 }
 
 .current-page {
@@ -88,6 +90,13 @@ ul li:hover {
 
 .arrow {
     border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow-disabled {
+    border: solid grey;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;

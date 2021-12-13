@@ -15,5 +15,10 @@
         </div>
     </div>
     <div class="current-page">Page {{currentPage}} of {{totalPages}}</div>
-    <div class="lt"><i class="arrow left"></i></div><div class="gt"><i class="arrow right"></i></div>
+    <div class="lt" (click)="currentPageSelected(currentPage-1)">
+        <i [ngClass]="currentPage > 1 ? 'arrow left' : 'arrow-disabled left'"></i>
+    </div>
+    <div class="gt" (click)="currentPageSelected(currentPage+1)">
+        <i [ngClass]="currentPage < totalPages ? 'arrow right' : 'arrow-disabled right'"></i>
+    </div>
 </div>
