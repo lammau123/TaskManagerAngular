@@ -12,7 +12,7 @@ export class TaskManagerComponent implements OnInit {
   tasks: Task[];
   isShowAddTask: boolean = false;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 10;
   numberOfPages: number[] = [];
 
   constructor(private taskService: TasksService) { }
