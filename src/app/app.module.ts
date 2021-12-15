@@ -6,6 +6,7 @@ import { TaskManagerComponent } from './components/task-manager/task-manager.com
 import { TaskComponent } from './components/task/task.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     TaskManagerComponent,
     TaskComponent,
     TaskFormComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    UploadTaskComponent
   ],
   imports: [
     BrowserModule,

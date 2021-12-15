@@ -1,6 +1,7 @@
 <div class="container">
     <div class="header">
         <h1>Task Manager</h1>
+        <app-upload-task></app-upload-task>
         <button class="btn" (click)="addTask()">Add</button>
     </div>
     <app-task-form *ngIf="isShowAddTask" (taskEvent)="insertTask($event)"></app-task-form>
