@@ -18,8 +18,11 @@ export class TaskManagerComponent implements OnInit {
   constructor(private taskService: TasksService) { }
 
   ngOnInit(): void {
-    this.taskService.getTotalRows().subscribe(rows => this.numberOfPages = Array.from({length: Math.ceil(rows/this.pageSize)}).map((_, index) => (index+1)*this.pageSize));
-    this.taskService.getTasks((this.currentPage - 1)*this.pageSize, this.pageSize).subscribe(tasks => this.tasks = tasks);
+    this.taskService.getTotalRows()
+                    .subscribe(rows => this.numberOfPages = Array.from({length: Math.ceil(rows/this.pageSize)})
+                    .map((_, index) => (index+1)*this.pageSize));
+    this.taskService.getTasks((this.currentPage - 1)*this.pageSize, this.pageSize)
+                    .subscribe(tasks => this.tasks = tasks);
   }
 
   addTask(){
