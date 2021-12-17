@@ -21,7 +21,7 @@ export class TaskManagerComponent implements OnInit {
     this.taskService.getTotalRows()
                     .subscribe(rows => this.numberOfPages = Array.from({length: Math.ceil(rows/this.pageSize)})
                     .map((_, index) => (index+1)*this.pageSize));
-    this.taskService.getTasks((this.currentPage - 1)*this.pageSize, this.pageSize)
+    this.taskService.getTasks(this.currentPage, this.pageSize)
                     .subscribe(tasks => this.tasks = tasks);
   }
 
@@ -39,6 +39,7 @@ export class TaskManagerComponent implements OnInit {
 
   currentPageChanged(no: number){
     this.currentPage = no;
-    this.taskService.getTasks((this.currentPage - 1)*this.pageSize, this.pageSize).subscribe(tasks => this.tasks = tasks);
+    this.taskService.getTasks(this.currentPage, this.pageSize)
+                    .subscribe(tasks => this.tasks = tasks);
   }
 }
