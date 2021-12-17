@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task';
 import { TasksService } from '../../services/tasks.service';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-task-manager',

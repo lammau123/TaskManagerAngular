@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  taskService: "http://localhost:3000/"
+  taskService: "http://localhost:3000/api"
 };
 
 /*

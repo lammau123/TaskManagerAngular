@@ -17,12 +17,12 @@ export class TasksService {
   constructor(private httpClient: HttpClient) {}
 
   getTasks(page: number, rows: number): Observable<Task[]>{
-    return this.httpClient.get<ResponseData>(`${environment.taskService}?page=${page}&page-size=${rows}`)
+    return this.httpClient.get<ResponseData>(`${environment.taskService}/?page=${page}&page-size=${rows}`)
                           .pipe(map(res => res.tasks));
   }
 
   getTotalRows(): Observable<number>{
-    return this.httpClient.get<ResponseData>("http://localhost:3000/totalTasks")
+    return this.httpClient.get<ResponseData>(`${environment.taskService}/totalTasks`)
                           .pipe(map(res => res.totalTasks));
   }
 }
